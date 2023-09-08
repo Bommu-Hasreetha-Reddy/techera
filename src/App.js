@@ -1,21 +1,17 @@
-import {Route, Switch} from 'react-router-dom'
-
-import CourseItem from './components/CourseItem'
-
-import CourseItemDetails from './components/CourseItemDetails'
-
+import {Switch, Route, Redirect} from 'react-router-dom'
+import Home from './components/Home'
+import Courses from './components/Course'
 import NotFound from './components/NotFound'
-
 import './App.css'
 
 // Replace your code here
 const App = () => (
-  <div>
-    <Switch>
-      <Route exact path="/" component={CourseItem} />
-      <Route exact path="/courses/:id" component={CourseItemDetails} />
-      <Route component={NotFound} />
-    </Switch>
-  </div>
+  <Switch>
+    <Route exact path="/" component={Home} />
+    <Route exact path="/courses/:id" component={Courses} />
+    <Route path="/not-found" component={NotFound} />
+    <Redirect to="not-found" />
+  </Switch>
 )
+
 export default App

@@ -1,24 +1,24 @@
 import {Link} from 'react-router-dom'
-import {NoCon, NoIm, Nel, Logo, Noh, Nop} from './style'
+import Navbar from '../NavBar'
+import './index.css'
 
 const NotFound = () => (
-  <div>
-    <Link to="/" className="link-el">
-      <Nel>
-        <Logo
-          src="https://assets.ccbp.in/frontend/react-js/tech-era/website-logo-img.png"
-          alt="website logo"
-        />
-      </Nel>
-    </Link>
-    <NoCon>
-      <NoIm
+  <div className="bg-container">
+    <Navbar />
+    <div className="not-found-container">
+      <h1>Page Not Found</h1>
+      <img
         src="https://assets.ccbp.in/frontend/react-js/tech-era/not-found-img.png"
         alt="not found"
+        className="not-found"
       />
-      <Noh>Page Not Found</Noh>
-      <Nop>We are sorry, the page you requested could not be found</Nop>
-    </NoCon>
+      <p>We are sorry, the page you requested could not be found</p>
+      <Link to="/" className="link">
+        <button type="button" className="button">
+          Home
+        </button>
+      </Link>
+    </div>
   </div>
 )
 
